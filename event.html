@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static.png" type="png">
+    <title>Event Announcement - Legacy Verse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #ff0000;
+        }
+
+        .navbar .logo {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+
+        .navbar .logo-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-family: 'Russo One', sans-serif;
+            color: #ff0000;
+            margin-bottom: 40px;
+        }
+
+        .announcement {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            text-align: left;
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .announcement h2 {
+            font-size: 2rem;
+            color: #ff0000;
+            margin-bottom: 15px;
+        }
+
+        .announcement p {
+            font-size: 1.1rem;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .announcement img {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .announcement .date {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.4rem;
+            color: #fff;
+            background: #ff0000;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #ffffff;
+        }
+
+        .button:active {
+            transform: scale(1);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with Logo, Links -->
+    <div class="navbar">
+        <!-- Logo with Redirect -->
+        <a href="https://discord.gg/your-discord-link" class="logo-link" target="_blank">
+            <img src="standard.gif" alt="Legacy Verse Logo" class="logo">
+        </a>
+        
+        <div>
+            <a href="bantype.html">Ban Type</a>
+            <a href="aboutroles.html">About Roles</a>
+            <a href="index.html">Events</a>
+            <a href="aboutlv.html">Legacy Verse</a>
+           
+      
+        </div>
+    </div>
+
+    <!-- Event Announcement Container -->
+    <div class="container">
+        <h1>Upcoming Event Announcement</h1>
+
+        <!-- Event Announcement 1 -->
+        <div class="announcement">
+            <h2>Legacy Verse PvP Tournament</h2>
+            <p>Get ready for the most intense PvP tournament in Legacy Verse! The tournament will feature different brackets where players can battle it out to claim the title of Champion. Join now, train hard, and prepare for the ultimate test of your skills!</p>
+            <img src="standard (2).gif" alt="PvP Tournament">
+            <div class="date">Event Date: Coming Soon</div>
+        </div>
+
+        <!-- Event Announcement 2 -->
+        <div class="announcement">
+            <h2>Auction</h2>
+            <p>Get ready for an exciting event coming soon to Legacy Verse – the Auction Event! Players will have the chance to bid on exclusive items, rare resources, and unique treasures. Whether you’re selling or bidding, it’s an event you won’t want to miss! Mark your calendars and prepare for intense competition and amazing rewards!</p>
+            <img src="standard (3).gif" alt="Adventure Challenge">
+            <div class="date">Coming Soon</div>
+        </div>
+
+        <a href="index.html"><button class="button">Back To Home</button></a>
+    </div>
+
+</body>
+</html>

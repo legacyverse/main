@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static.png" type="png">
+    <title>Legacy Verse - Discord Rules</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0a0a0a; /* Dark background for horror effect */
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.85); /* Darker, eerie effect */
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+            backdrop-filter: blur(10px); /* Blurring the background */
+            overflow-y: auto;
+            max-height: 90vh;
+            position: relative;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-family: 'Russo One', sans-serif;
+            color: #ff0000;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 3px #ff0000, 0 0 6px #ff0000;
+            }
+            100% {
+                text-shadow: 0 0 6px #ff0000, 0 0 12px #ff0000;
+            }
+        }
+
+        .rule-section {
+            background: rgba(0, 0, 0, 0.9);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+            color: #e2e2e2;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rule-section h2 {
+            font-size: 1.8rem;
+            font-family: 'Russo One', sans-serif;
+            color: #ff3333;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .rule-section h2:hover {
+            color: #ff00ff;
+            transform: scale(1.03); /* Smaller pop-up effect */
+        }
+
+        .rule-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            transition: transform 0.4s ease;
+        }
+
+        .rule-section p:hover {
+            transform: translateX(10px);
+            color: #999;
+        }
+
+        .back-button {
+            background-color: #ff0000;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #990000;
+            transform: scale(1.05);
+        }
+
+        .back-button:active {
+            background-color: #660000;
+            transform: scale(1);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #333;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ff0000;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cc0000;
+        }
+
+        /* Discord Button */
+        .discord-btn {
+            background-color: #ff0000; /* Red color */
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: background-color 0.3s;
+            font-family: 'Russo One', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .discord-btn:hover {
+            background-color: #990000;
+        }
+
+        .discord-btn .dot {
+            width: 6px;
+            height: 6px;
+            margin: 0 2px;
+            background-color: white;
+            border-radius: 50%;
+            animation: blink 1s infinite alternate;
+        }
+
+        .discord-btn .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .discord-btn .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Discord link reveal */
+        .discord-link {
+            display: none;
+            position: absolute;
+            top: 55px;
+            right: 20px;
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 0, 0, 0.6);
+            color: white;
+            font-size: 1.2rem;
+            z-index: 5;
+            width: 250px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .discord-link h3 {
+            font-family: 'Russo One', sans-serif;
+            color: #ff0000;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .discord-link a {
+            color: #7289da;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .discord-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Discord Rules</h1>
+
+        <!-- Rule 1 -->
+        <div class="rule-section">
+            <h2>Respect All Members</h2>
+            <p>Treat everyone with kindness and respect. No harassment, bullying, or discriminatory language will be tolerated.</p>
+        </div>
+
+        <!-- Rule 2 -->
+        <div class="rule-section">
+            <h2>Keep It Friendly</h2>
+            <p>Keep discussions friendly and fun. Avoid toxic behavior, excessive negativity, or arguing over trivial matters.</p>
+        </div>
+
+        <!-- Rule 3 -->
+        <div class="rule-section">
+            <h2>No Spam</h2>
+            <p>Do not spam messages, emojis, or links. This includes repeated text, excessive mentions, or unsolicited promotions.</p>
+        </div>
+
+        <!-- Rule 4 -->
+        <div class="rule-section">
+            <h2>Appropriate Content Only</h2>
+            <p>Keep content appropriate for all ages. No NSFW, explicit, or inappropriate material in any form.</p>
+        </div>
+
+        <!-- Rule 5 -->
+        <div class="rule-section">
+            <h2>Follow Voice Chat Etiquette</h2>
+            <p>In voice channels, keep noise levels reasonable, avoid interrupting, and respect the ongoing conversations.</p>
+        </div>
+
+        <!-- Rule 6 -->
+        <div class="rule-section">
+            <h2>No Cheating or Exploiting</h2>
+            <p>Cheating, exploiting, or using hacks in any game is strictly prohibited. Play fair and respect the community.</p>
+        </div>
+
+        <!-- Rule 7 -->
+        <div class="rule-section">
+            <h2>Use Correct Channels</h2>
+            <p>Post content in the appropriate channels. Keep general chats clear for discussions, and avoid off-topic conversations in game-related channels.</p>
+        </div>
+
+        <!-- Rule 8 -->
+        <div class="rule-section">
+            <h2>No Self-Promotion</h2>
+            <p>Do not promote your personal content, streams, or servers unless specified by the server owner or in designated channels.</p>
+        </div>
+
+        <!-- Rule 9 -->
+        <div class="rule-section">
+            <h2>Respect Privacy</h2>
+            <p>Do not share private information, including real names, addresses, or social media accounts, without consent.</p>
+        </div>
+
+        <!-- Rule 10 -->
+        <div class="rule-section">
+            <h2>Listen to the Staff</h2>
+            <p>Follow the instructions of moderators and admins. They are here to maintain a positive environment for everyone.</p>
+        </div>
+
+        <!-- Back button -->
+        <a href="index.html">
+        <button class="back-button" onclick="location.href='index.html'">Back to Main Page</button></a>
+        
+        <!-- Discord Button -->
+        <button class="discord-btn" onclick="toggleDiscordLink()">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </button>
+
+        <!-- Discord Link -->
+        <div class="discord-link" id="discord-link">
+            <h3>Join Legacy Verse</h3>
+            <a href="https://discord.gg/r8mDRk7uGb" target="_blank">Click here to join our Discord</a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleDiscordLink() {
+            const discordLink = document.getElementById("discord-link");
+            if (discordLink.style.display === "none" || discordLink.style.display === "") {
+                discordLink.style.display = "block";
+            } else {
+                discordLink.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

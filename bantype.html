@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static.png" type="png">
+    <title>Ban Types - Legacy Verse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #ff0000;
+        }
+
+        .navbar .logo {
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+
+        .navbar .logo-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-family: 'Russo One', sans-serif;
+            color: #ff0000;
+            margin-bottom: 40px;
+        }
+
+        .ban-type {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+        }
+
+        .ban-type h2 {
+            font-size: 2rem;
+            color: #ff0000;
+            margin-bottom: 15px;
+        }
+
+        .ban-type p {
+            font-size: 1.1rem;
+            color: white;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.4rem;
+            color: #fff;
+            background: #ff0000;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #ffffff;
+        }
+
+        .button:active {
+            transform: scale(1);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with Logo, Links, and Events -->
+    <div class="navbar">
+        <!-- Logo with Redirect -->
+        <a href="https://discord.gg/your-discord-link" class="logo-link" target="_blank">
+            <img src="standard.gif" alt="Legacy Verse Logo" class="logo">
+        </a>
+        
+        <div>
+            <a href="index.html">Ban Type</a>
+            <a href="aboutroles.html">About Roles</a>
+            <a href="aboutlv.html">Legacy Verse</a>
+            <a href="event.html">Events</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Ban Types</h1>
+
+        <div class="ban-type">
+            <h2>1. Temporary Ban</h2>
+            <p>This ban will last from 2-3 days even up to a month. The player will be temporarily restricted from participating in the server, depending on the severity of the offense.</p>
+        </div>
+
+        <div class="ban-type">
+            <h2>2. Season Ban</h2>
+            <p>This ban will last for the current Legacy Verse Minecraft season. Once the season ends, the player will be allowed to rejoin the server and continue their gameplay.</p>
+        </div>
+
+        <div class="ban-type">
+            <h2>3. Permanent Ban</h2>
+            <p>This ban will last as long as Legacy Verse exists. A permanent ban means that the player will never be able to access the server again unless the ban is lifted through a special request.</p>
+        </div>
+
+        <a href="index.html"><button class="button">Back to Home</button></a>
+    </div>
+</body>
+</html>
