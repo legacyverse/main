@@ -5,6 +5,7 @@
     <link rel="icon" href="static.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refund Policy - Legacy Verse Membership</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* General Styles */
         body {
@@ -28,6 +29,7 @@
             border-bottom: 4px solid #ff3d00;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             margin-bottom: 30px;
+            position: relative;
         }
 
         .header h1 {
@@ -46,7 +48,7 @@
 
         /* Policy Section */
         .policy-container {
-            width: 90%;
+            width: 100%;
             max-width: 800px;
             background: #1c1c1c;
             border: 2px solid #ff3d00;
@@ -79,6 +81,48 @@
             color: #f0f0f0;
         }
 
+        /* Futuristic Button */
+        .plans-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #1c1c1c;
+            background: #ff3d00;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 61, 0, 0.5);
+            transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            overflow: hidden;
+        }
+
+        .plans-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-45deg);
+            transition: left 0.3s ease-in-out;
+        }
+
+        .plans-button:hover::before {
+            left: 100%;
+        }
+
+        .plans-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 61, 0, 0.7);
+        }
+
         /* Footer Section */
         footer {
             margin-top: auto;
@@ -100,6 +144,33 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .policy-container {
+                padding: 20px;
+            }
+
+            .policy-container h2 {
+                font-size: 1.5rem;
+            }
+
+            .policy-container p, .policy-container ul {
+                font-size: 0.9rem;
+            }
+
+            .plans-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -108,6 +179,9 @@
     <div class="header">
         <h1>Membership</h1>
         <p>Legacy Verse</p>
+        <!-- Futuristic Plans Button -->
+         <a href="plan.html">
+        <button class="plans-button">Plans</button></a>
     </div>
 
     <!-- Policy Content -->
@@ -118,6 +192,7 @@
         </p>
         <ul>
            <li>Unlock the full potential of your Legacy Verse journey with our exclusive membership plans! Gain premium roles, enchanted gear, rare items, spawners, and in-game currency to dominate the server. Whether you're building, battling, or exploring, these plans give you the edge to thrive. Choose your membership today and experience the ultimate gameplay advantage!</li>
+        </ul>
         <h2>Payment Policy</h2>
         <p>
             Payment are under going in this policy:
@@ -139,13 +214,10 @@
         </ul>
 
         <h2>Membership Admins</h2>
-        <p>
-            <ul>
-                <li>Gladiator <strong>[@beastyy0697]</strong></li>
-                <li>CRUDE_X <strong>[@_chris__ty_]</strong></li>
-                
-            </ul>
-        </p>
+        <ul>
+            <li>Gladiator <strong>[@beastyy0697]</strong></li>
+            <li>CRUDE_X <strong>[@_chris__ty_]</strong></li>
+        </ul>
     </div>
 
     <!-- Footer Section -->
@@ -153,5 +225,6 @@
         &copy; 2025 Legacy Verse. Questions? <a href="https://discord.gg/5JytV6Fp">Contact Us</a>.
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
